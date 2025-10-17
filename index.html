@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lễ Cưới Anh & Em</title>
+    <title>Sỹ ❤ Thảo</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -42,10 +42,18 @@
 
         /* Background image with overlay */
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('./img/s1.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('./img/bg.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            /* Mặc định sẽ cuộn theo trang, tương thích tốt với di động */
+            background-attachment: scroll; 
+        }
+
+        /* Chỉ áp dụng hiệu ứng 'fixed' cho màn hình lớn hơn 768px (máy tính bảng trở lên) */
+        @media (min-width: 768px) {
+            .hero-bg {
+                background-attachment: fixed;
+            }
         }
         
         .timeline-item::before {
@@ -73,13 +81,32 @@
         .card-shadow {
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
         }
+
+        /* Falling Items Animation */
+        .falling-item {
+            position: absolute;
+            top: -10%;
+            user-select: none;
+            animation: fall linear;
+            z-index: 9999;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-50">
 
+    <!-- Falling Items Container -->
+    <!-- <div id="falling-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-40 overflow-hidden"></div> -->
+
     <!-- Audio Player -->
-    <audio id="background-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <audio id="background-music" autoplay loop>
+        <source src="http://nhacchuong123.net/nhac-chuong/nhac-hay/I Do - 911-nhacchuong123.net.mp3" type="audio/mpeg">
         Trình duyệt của bạn không hỗ trợ audio.
     </audio>
     <div id="music-control" class="fixed bottom-5 right-5 z-50 w-12 h-12 bg-sky-400 text-white rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-sky-500 transition-colors">
@@ -89,11 +116,11 @@
     <!-- Header/Hero Section -->
     <header id="home" class="hero-bg h-screen flex flex-col items-center justify-center text-white text-center p-4">
         <h2 class="text-3xl md:text-5xl mb-2">Trân trọng báo tin</h2>
-        <h1 class="text-6xl md:text-8xl font-bold mb-4">Anh & Em</h1>
-        <p class="text-xl md:text-2xl mb-6">Sắp về chung một nhà!</p>
-        <div class="border-t-2 border-b-2 border-white/50 py-4 px-8 mt-4">
+        <h1 class="text-6xl md:text-8xl font-bold mb-4">Tiến Sỹ <br>&<br> Thị Thảo</h1>
+        <p class="text-xl md:text-2xl mb-6">Chúng mình sắp về chung một nhà!</p>
+        <div class="border-t-2 border-b-2 border-white/50 py-4 px-8 mt-4 ">
              <p class="text-2xl md:text-3xl font-semibold tracking-widest">SAVE THE DATE</p>
-             <p class="text-xl md:text-2xl mt-1">28.12.2025</p>
+             <p class="text-xl md:text-2xl mt-1">27.11.2025</p>
         </div>
         
         <!-- Countdown Timer -->
@@ -124,23 +151,27 @@
         <section id="invitation" class="py-20 text-center reveal">
             <h2 class="text-5xl text-sky-800 mb-6">Lời Mời</h2>
             <p class="text-lg leading-relaxed max-w-2xl mx-auto text-slate-600">
-                Tình yêu không phải là nhìn chằm chằm vào nhau, mà là cùng nhau nhìn về một hướng. <br/>
+                Chúng ta không hoàn hảo, chúng ta hoàn thành nhau.<br/>
                 Chúng tôi vô cùng hạnh phúc khi được chia sẻ khoảnh khắc trọng đại này cùng gia đình và bạn bè.
                 Sự hiện diện của bạn là món quà quý giá nhất.
             </p>
-            <div class="flex justify-center items-center space-x-8 mt-12">
-                <div class="text-center">
-                    <img src="./img/cr.gif" alt="Chú rể" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mx-auto border-4 border-sky-100 shadow-lg">
-                    <h3 class="text-3xl mt-4 text-slate-800">Văn Anh</h3>
-                    <p class="text-slate-500">Con trai trưởng</p>
-                    <p>Ông: Nguyễn Văn A & Bà: Lê Thị B</p>
+            <div class="flex justify-center items-center mt-12 w-full px-2 space-x-2 sm:space-x-4">
+                <div class="text-center flex-1 min-w-0">
+                    <img src="./img/chure.png" alt="Chú rể" class="w-28 h-28 sm:w-36 sm:h-36 md:w-52 md:h-52 rounded-full object-cover mx-auto border-4 border-sky-100 shadow-lg">
+                    <h3 class="text-2xl md:text-3xl mt-4 text-slate-800">Tiến Sỹ</h3>
+                    <p class="text-slate-500 text-sm md:text-base">Con trai trưởng</p>
+                    <p class="text-sm md:text-base">Ông: Phạm Dũng</p>
+                    <p class="text-sm md:text-base">Bà: Nguyễn Thị Hồng Thuý</p>
                 </div>
-                <div class="text-4xl text-sky-400">&</div>
-                 <div class="text-center">
-                    <img src="./img/cd.jpg" alt="Cô dâu" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mx-auto border-4 border-sky-100 shadow-lg">
-                    <h3 class="text-3xl mt-4 text-slate-800">Ngọc Em</h3>
-                    <p class="text-slate-500">Con gái út</p>
-                    <p>Ông: Trần Văn C & Bà: Phạm Thị D</p>
+
+                <div class="text-3xl text-sky-400 self-center px-1">❤︎</div>
+
+                <div class="text-center flex-1 min-w-0">
+                    <img src="./img/codau.jpg" alt="Cô dâu" class="w-28 h-28 sm:w-36 sm:h-36 md:w-52 md:h-52 rounded-full object-cover mx-auto border-4 border-sky-100 shadow-lg">
+                    <h3 class="text-2xl md:text-3xl mt-4 text-slate-800">Thị Thảo</h3>
+                    <p class="text-slate-500 text-sm md:text-base">Thứ nữ</p>
+                    <p class="text-sm md:text-base">Ông: Nguyễn Văn Thuận</p>
+                    <p class="text-sm md:text-base">Bà: Ứng Thị Hường</p>
                 </div>
             </div>
         </section>
@@ -180,99 +211,75 @@
                 <div class="bg-white p-8 rounded-lg card-shadow w-full text-center border-t-4 border-sky-300">
                     <i class="fas fa-church text-4xl text-sky-400 mb-4"></i>
                     <h3 class="text-3xl font-dancing mb-2 text-slate-800">Lễ Thành Hôn</h3>
-                    <p class="font-semibold text-lg text-slate-700">10:00 - 28/12/2025</p>
+                    <p class="font-semibold text-lg text-slate-700">9:00 - 27/11/2025</p>
                     <p class="mt-2 text-slate-500">Tại tư gia nhà gái</p>
-                    <p class="mt-1 text-slate-600">123 Đường ABC, Phường X, Quận Y, TP.HCM</p>
-                    <a href="https://maps.google.com" target="_blank" class="inline-block mt-4 bg-sky-400 text-white py-2 px-5 rounded-full hover:bg-sky-500 transition-colors">Xem bản đồ</a>
+                    <p class="mt-1 text-slate-600">làng Le 2, Ia Lang, Đức Cơ, Gia Lai</p>
+                    <a href="https://maps.app.goo.gl/542cvKMgEotfFwkQ6" target="_blank" class="inline-block mt-4 bg-sky-400 text-white py-2 px-5 rounded-full hover:bg-sky-500 transition-colors">Xem bản đồ</a>
                 </div>
                 <!-- Reception Party -->
                  <div class="bg-white p-8 rounded-lg card-shadow w-full text-center border-t-4 border-sky-300">
                     <i class="fas fa-glass-cheers text-4xl text-sky-400 mb-4"></i>
                     <h3 class="text-3xl font-dancing mb-2 text-slate-800">Tiệc Mừng</h3>
+                    <p class="font-semibold text-lg text-slate-700">11:00 - 27/11/2025</p>
+                    <p class="mt-2 text-slate-500">Tư gia nhà trai</p>
+                    <p class="mt-1 text-slate-600">làng Le 2, Ia Lang, Đức Cơ, Gia Lai</p>
+                     <a href="https://maps.app.goo.gl/mJaiVLNj9zHM8VST8" target="_blank" class="inline-block mt-4 bg-sky-400 text-white py-2 px-5 rounded-full hover:bg-sky-500 transition-colors">Xem bản đồ</a>
+                </div>
+                <!-- Additional party -->
+                 <div class="bg-white p-8 rounded-lg card-shadow w-full text-center border-t-4 border-sky-300">
+                    <i class="fas fa-glass-cheers text-4xl text-sky-400 mb-4"></i>
+                    <h3 class="text-3xl font-dancing mb-2 text-slate-800">Additional party</h3>
                     <p class="font-semibold text-lg text-slate-700">18:00 - 28/12/2025</p>
                     <p class="mt-2 text-slate-500">Nhà hàng tiệc cưới XYZ</p>
                     <p class="mt-1 text-slate-600">456 Đường DEF, Phường U, Quận V, TP.HCM</p>
                      <a href="https://maps.google.com" target="_blank" class="inline-block mt-4 bg-sky-400 text-white py-2 px-5 rounded-full hover:bg-sky-500 transition-colors">Xem bản đồ</a>
                 </div>
+
             </div>
         </section>
         
         <!-- Photo Album Section -->
-        <!-- <section id="album" class="py-20 reveal max-w-5xl mx-auto">
-            <h2 class="text-5xl text-sky-800 text-center mb-12">Album Kỷ Niệm</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:col-span-1 sm:row-span-2">
-                    <img src="https://placehold.co/400x800/7DD3FC/FFFFFF?text=Ảnh+Dọc" alt="Ảnh cưới 1" class="w-full h-full object-cover">
-                    <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
-                </div>
-                <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:col-span-2">
-                    <img src="https://placehold.co/800x400/BAE6FD/0C4A6E?text=Ảnh+Ngang" alt="Ảnh cưới 2" class="w-full h-full object-cover">
-                    <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
-                </div>
-                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="https://placehold.co/400x400/7DD3FC/FFFFFF?text=Ảnh+3" alt="Ảnh cưới 3" class="w-full h-full object-cover">
-                    <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
-                </div>
-                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="https://placehold.co/400x400/E0F2FE/0C4A6E?text=Ảnh+4" alt="Ảnh cưới 4" class="w-full h-full object-cover">
-                    <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
-                </div>
-                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:col-span-2 sm:row-span-2">
-                    <img src="https://placehold.co/800x800/38BDF8/FFFFFF?text=Ảnh+Lớn" alt="Ảnh cưới 5" class="w-full h-full object-cover">
-                    <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
-                </div>
-                <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="https://placehold.co/400x400/BAE6FD/0C4A6E?text=Ảnh+6" alt="Ảnh cưới 6" class="w-full h-full object-cover">
-                    <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
-                </div>
-                <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:col-span-1 sm:row-span-2">
-                    <img src="https://placehold.co/400x800/E0F2FE/0C4A6E?text=Ảnh+Dọc+2" alt="Ảnh cưới 7" class="w-full h-full object-cover">
-                    <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
-                </div>
-                <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="https://placehold.co/400x400/7DD3FC/FFFFFF?text=Ảnh+8" alt="Ảnh cưới 8" class="w-full h-full object-cover">
-                    <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
-                </div>
-            </div>
-        </section> -->
-
         <section id="album" class="py-20 reveal max-w-5xl mx-auto">
             <h2 class="text-5xl text-sky-800 text-center mb-12">Album Kỷ Niệm</h2>
             <div class="grid grid-cols-2 sm:grid-cols-4 sm:grid-rows-4 gap-4">
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:col-span-2 sm:row-span-2">
-                    <img src="./img/h1.jpg" alt="Ảnh cưới 1" class="w-full h-full object-cover">
+                    <img src="./img/anh_1.jpg" alt="Ảnh cưới 1" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="./img/h1.jpg" alt="Ảnh cưới 2" class="w-full h-full object-cover">
+                    <img src="./img/anh_2.jpg" alt="Ảnh cưới 2" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                  <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="./img/ad2.jpg" alt="Ảnh cưới 3" class="w-full h-full object-cover">
+                    <img src="./img/anh_3.jpg" alt="Ảnh cưới 3" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                  <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:col-span-2">
-                    <img src="./img/IMG_4952.HEIC" alt="Ảnh cưới 4" class="w-full h-full object-cover">
+                    <img src="./img/anh_4.jpg" alt="Ảnh cưới 4" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:row-span-2">
-                    <img src="./img/s1.jpg" alt="Ảnh cưới 5" class="w-full h-full object-cover">
+                    <img src="./img/anh_5.jpg" alt="Ảnh cưới 5" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                  <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="https://placehold.co/400x400/BFDBFE/1E3A8A?text=Ảnh+6" alt="Ảnh cưới 6" class="w-full h-full object-cover">
+                    <img src="./img/anh_6.gif" alt="Ảnh cưới 6" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="https://placehold.co/400x400/60A5FA/FFFFFF?text=Ảnh+7" alt="Ảnh cưới 7" class="w-full h-full object-cover">
+                    <img src="./img/anh_7.jpg" alt="Ảnh cưới 7" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
-                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="https://placehold.co/400x400/DBEAFE/1E3A8A?text=Ảnh+8" alt="Ảnh cưới 8" class="w-full h-full object-cover">
+                <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
+                    <img src="./img/anh_8.jpg" alt="Ảnh cưới 8" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:col-span-2">
-                    <img src="./img/ad.png" alt="Ảnh cưới 9" class="w-full h-full object-cover">
+                    <img src="./img/anh_9.jpg" alt="Ảnh cưới 9" class="w-full h-full object-cover">
+                    <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
+                </div>
+                <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
+                    <img src="./img/anh_10.jpg" alt="Ảnh cưới 8" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
             </div>
@@ -311,27 +318,79 @@
         </section>
         
         <!-- Gift Section -->
+
         <section id="gifting" class="py-20 text-center reveal max-w-4xl mx-auto">
             <h2 class="text-5xl text-sky-800 mb-6">Mừng Cưới</h2>
-            <p class="max-w-2xl mx-auto mb-8 text-slate-600">Sự hiện diện của bạn trong ngày vui là món quà lớn nhất. Nếu bạn muốn gửi quà mừng, có thể gửi tại thùng mừng cưới ở sảnh tiệc hoặc qua thông tin dưới đây.</p>
-            <div class="flex flex-col md:flex-row justify-center gap-8">
-                <!-- Groom's Bank -->
-                <div class="bg-white p-6 rounded-lg card-shadow flex-1">
-                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Nhà trai</h3>
-                    <p>Ngân hàng: Vietcombank</p>
-                    <p>Chủ TK: Nguyễn Văn Anh</p>
-                    <p>Số TK: 1234567890</p>
+            <p class="max-w-2xl mx-auto mb-12 text-slate-600">Sự hiện diện của bạn trong ngày vui là món quà lớn nhất. Nếu bạn muốn gửi quà mừng, có thể gửi tại thùng mừng cưới ở sảnh tiệc hoặc qua thông tin dưới đây.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+                <div class="bg-white p-6 rounded-lg card-shadow text-center">
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-800">Nhà trai</h3>
+                    <img src="./img/qr_1.png" alt="Mã QR mừng cưới nhà trai" class="w-48 h-48 mx-auto rounded-md object-cover mb-4">
+                    <div class="text-left inline-block">
+                        <p><span class="font-semibold">Ngân hàng:</span> ACB</p>
+                        <p><span class="font-semibold">Chủ TK:</span> Phạm Tiến Sỹ</p>
+                        <p><span class="font-semibold">Số TK:</span> 2205977</p>
+                    </div>
                 </div>
-                <!-- Bride's Bank -->
-                <div class="bg-white p-6 rounded-lg card-shadow flex-1">
-                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Nhà gái</h3>
-                    <p>Ngân hàng: Techcombank</p>
-                    <p>Chủ TK: Trần Ngọc Em</p>
-                    <p>Số TK: 0987654321</p>
+
+                <div class="bg-white p-6 rounded-lg card-shadow text-center">
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-800">Nhà gái</h3>
+                    <img src="./img/qr_1.png" alt="Mã QR mừng cưới nhà gái" class="w-48 h-48 mx-auto rounded-md object-cover mb-4">
+                    <div class="text-left inline-block">
+                        <p><span class="font-semibold">Ngân hàng:</span> Techcombank</p>
+                        <p><span class="font-semibold">Chủ TK:</span> Trần Ngọc Em</p>
+                        <p><span class="font-semibold">Số TK:</span> 0987654321</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Calendar Section - UPDATED -->
+        <section id="calendar" class="py-20 reveal">
+            <h2 class="text-5xl text-sky-800 text-center mb-12">Ngày Đặc Biệt</h2>
+            <div class="max-w-md mx-auto text-center">
+                <!-- Month Header with SVG background -->
+                <div class="relative inline-block mb-4">
+                    <!-- Paint Smear SVG -->
+                    <svg class="absolute -top-1 left-1/2 -translate-x-1/2 w-[140%]" viewBox="0 0 280 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg" >
+                        <path class="text-sky-200" d="M0 30 C 40 10, 70 10, 100 25 C 130 40, 150 45, 180 40 C 210 35, 240 20, 280 30 L 280 45 C 240 60, 210 65, 180 55 C 150 45, 130 50, 100 45 C 70 40, 40 50, 0 45 Z" />
+                    </svg>
+                    <h3 class="relative text-6xl font-dancing text-sky-700">Tháng 11</h3>
+                </div>
+                <p class="text-2xl font-bold text-slate-400 mb-8">2025</p>
+
+                <!-- Calendar Grid -->
+                <div class="bg-transparent p-4">
+                    <div class="grid grid-cols-7 gap-y-3 text-center font-semibold text-slate-500 text-sm uppercase tracking-wider mb-4">
+                        <div>CN</div>
+                        <div>T2</div>
+                        <div>T3</div>
+                        <div>T4</div>
+                        <div>T5</div>
+                        <div>T6</div>
+                        <div>T7</div>
+                    </div>
+                    <div class="grid grid-cols-7 gap-y-4 text-center text-slate-600 text-lg">
+                        <!-- Empty cells for days of previous month. Dec 1, 2025 is a Monday. -->
+                        <div></div> 
+                        <div></div> <div></div> <div></div> <div></div> <div></div> <div>1</div>
+                        <div>2</div> <div>3</div> <div>4</div> <div>5</div> <div>6</div> <div>7</div> <div>8</div>
+                        <div>9</div> <div>10</div> <div>11</div> <div>12</div> <div>13</div> <div>14</div> <div>15</div>
+                        <div>16</div> <div>17</div> <div>18</div> <div>19</div> <div>20</div> <div>21</div> <div>22</div>
+                        <div>23</div> <div>24</div> <div>25</div> <div>26</div>
+                        <div class="relative flex items-center justify-center">
+                            <!-- Hand-drawn heart SVG - CENTERED -->
+                            <svg class="absolute w-12 h-12 text-sky-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19.5 12.572c-1.895 2.138-4.536 4.428-7.5 6.428-2.964-2-5.605-4.29-7.5-6.428C2.736 10.66 2 8.71 2 6.5c0-2.485 2.015-4.5 4.5-4.5 2.117 0 4.031 1.488 4.885 3.524a.5.5 0 00.93 0C13.22 3.488 15.133 2 17.25 2c2.485 0 4.5 2.015 4.5 4.5 0 2.21-.736 4.16-2.25 6.072z"/>
+                            </svg>27</span>
+                        </div>
+                        <div>28</div> <div>29</div> <div>30</div>
+                    </div>
                 </div>
             </div>
         </section>
-
     </main>
     
     <!-- Footer -->
@@ -460,7 +519,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             
             // --- COUNTDOWN TIMER ---
-            const countdownDate = new Date("Dec 28, 2025 00:00:00").getTime();
+            const countdownDate = new Date("Nov 27, 2025 00:00:00").getTime();
             const timerInterval = setInterval(function() {
                 const now = new Date().getTime();
                 const distance = countdownDate - now;
@@ -530,6 +589,42 @@
 
             // --- INITIALIZE GUESTBOOK ---
             setupGuestbook();
+
+            // --- FALLING HEARTS & FLOWERS ---
+            function createFallingItems() {
+                const container = document.getElementById('falling-container');
+                if (!container) return;
+
+                const items = ['♥', '❤︎','✿'];
+                const colors = ['#f472b6', '#ec4899', '#fb7185', '#ef4444', '#f87171'];
+
+                setInterval(() => {
+                    const item = document.createElement('span');
+                    item.classList.add('falling-item');
+
+                    const symbol = items[Math.floor(Math.random() * items.length)];
+                    const xPos = Math.random() * 100;
+                    const size = Math.random() * 20 + 10; // size between 10px and 30px
+                    const duration = Math.random() * 5 + 8; // duration between 8s and 13s
+                    const delay = Math.random() * 5;
+
+                    item.innerHTML = symbol;
+                    item.style.left = `${xPos}vw`;
+                    item.style.fontSize = `${size}px`;
+                    item.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    item.style.animationDuration = `${duration}s`;
+                    item.style.animationDelay = `${delay}s`;
+                    
+                    container.appendChild(item);
+
+                    // Remove the item after it has fallen
+                    setTimeout(() => {
+                        item.remove();
+                    }, (duration + delay) * 1000);
+
+                }, 400); // Create a new item every 400ms for moderate density
+            }
+            createFallingItems();
         });
     </script>
 
