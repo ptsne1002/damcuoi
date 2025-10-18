@@ -42,14 +42,12 @@
 
         /* Background image with overlay */
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('./img/bg.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('./assets/bg.png');
             background-size: cover;
             background-position: center;
-            /* Mặc định sẽ cuộn theo trang, tương thích tốt với di động */
             background-attachment: scroll; 
         }
 
-        /* Chỉ áp dụng hiệu ứng 'fixed' cho màn hình lớn hơn 768px (máy tính bảng trở lên) */
         @media (min-width: 768px) {
             .hero-bg {
                 background-attachment: fixed;
@@ -102,11 +100,11 @@
 <body class="bg-slate-50">
 
     <!-- Falling Items Container -->
-    <!-- <div id="falling-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-40 overflow-hidden"></div> -->
+    <div id="falling-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-40 overflow-hidden"></div>
 
     <!-- Audio Player -->
     <audio id="background-music" autoplay loop>
-        <source src="http://nhacchuong123.net/nhac-chuong/nhac-hay/I Do - 911-nhacchuong123.net.mp3" type="audio/mpeg">
+        <source src="./assets/ido.mp3" type="audio/mpeg">
         Trình duyệt của bạn không hỗ trợ audio.
     </audio>
     <div id="music-control" class="fixed bottom-5 right-5 z-50 w-12 h-12 bg-sky-400 text-white rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-sky-500 transition-colors">
@@ -151,15 +149,15 @@
         <section id="invitation" class="py-20 text-center reveal">
             <h2 class="text-5xl text-sky-800 mb-6">Lời Mời</h2>
             <p class="text-lg leading-relaxed max-w-2xl mx-auto text-slate-600">
-                Chúng ta không hoàn hảo, chúng ta hoàn thành nhau.<br/>
-                Chúng tôi vô cùng hạnh phúc khi được chia sẻ khoảnh khắc trọng đại này cùng gia đình và bạn bè.
-                Sự hiện diện của bạn là món quà quý giá nhất.
+                Chúng mình không hoàn hảo, chúng mình hoàn thiện nhau.<br/>
+                Chúng mình vô cùng hạnh phúc khi được chia sẻ khoảnh khắc trọng đại này.<br/>
+                Sự hiện diện của bạn là món quà quý giá nhất đối với chúng mình.
             </p>
             <div class="flex justify-center items-center mt-12 w-full px-2 space-x-2 sm:space-x-4">
                 <div class="text-center flex-1 min-w-0">
-                    <img src="./img/chure.png" alt="Chú rể" class="w-28 h-28 sm:w-36 sm:h-36 md:w-52 md:h-52 rounded-full object-cover mx-auto border-4 border-sky-100 shadow-lg">
+                    <img src="./assets/chure.png" alt="Chú rể" class="w-28 h-28 sm:w-36 sm:h-36 md:w-52 md:h-52 rounded-full object-cover mx-auto border-4 border-sky-100 shadow-lg">
                     <h3 class="text-2xl md:text-3xl mt-4 text-slate-800">Tiến Sỹ</h3>
-                    <p class="text-slate-500 text-sm md:text-base">Con trai trưởng</p>
+                    <p class="text-slate-500 text-sm md:text-base">Trưởng nam</p>
                     <p class="text-sm md:text-base">Ông: Phạm Dũng</p>
                     <p class="text-sm md:text-base">Bà: Nguyễn Thị Hồng Thuý</p>
                 </div>
@@ -167,7 +165,7 @@
                 <div class="text-3xl text-sky-400 self-center px-1">❤︎</div>
 
                 <div class="text-center flex-1 min-w-0">
-                    <img src="./img/codau.jpg" alt="Cô dâu" class="w-28 h-28 sm:w-36 sm:h-36 md:w-52 md:h-52 rounded-full object-cover mx-auto border-4 border-sky-100 shadow-lg">
+                    <img src="./assets/codau.jpg" alt="Cô dâu" class="w-28 h-28 sm:w-36 sm:h-36 md:w-52 md:h-52 rounded-full object-cover mx-auto border-4 border-sky-100 shadow-lg">
                     <h3 class="text-2xl md:text-3xl mt-4 text-slate-800">Thị Thảo</h3>
                     <p class="text-slate-500 text-sm md:text-base">Thứ nữ</p>
                     <p class="text-sm md:text-base">Ông: Nguyễn Văn Thuận</p>
@@ -182,23 +180,23 @@
             <div class="relative pl-8 border-l-2 border-dashed border-sky-200">
                 <!-- Timeline Item 1 -->
                 <div class="mb-12 relative timeline-item">
-                    <h3 class="text-2xl font-dancing text-sky-600">Ngày đầu gặp gỡ - 15/03/2020</h3>
-                    <p class="mt-2 text-slate-600">Duyên phận bắt đầu từ một buổi chiều mưa, khi chúng tôi tình cờ trú chung dưới một mái hiên. Một cuộc trò chuyện ngẫu nhiên đã mở ra một chương mới cho cả hai.</p>
+                    <h3 class="text-2xl font-dancing text-sky-600">Ngày đầu gặp gỡ - 2008</h3>
+                    <p class="mt-2 text-slate-600">Duyên phận bắt đầu từ một buổi tựu trường khi cả 2 vào học lớp 4, chúng mình va phải ánh mắt hồn nhiên của nhau và trở thành bạn thân từ hồi đó.</p>
                 </div>
                 <!-- Timeline Item 2 -->
                 <div class="mb-12 relative timeline-item">
-                    <h3 class="text-2xl font-dancing text-sky-600">Chính thức yêu nhau - 01/05/2020</h3>
-                    <p class="mt-2 text-slate-600">Sau một thời gian tìm hiểu, chúng tôi nhận ra mình không thể thiếu nhau. Lời tỏ tình vụng về nhưng chân thành đã được nói ra, và một tình yêu đẹp bắt đầu.</p>
+                    <h3 class="text-2xl font-dancing text-sky-600">Lời tỏ tình - 16/02/2018</h3>
+                    <p class="mt-2 text-slate-600">Nhân dịp lễ tình nhân mình quyết định tỏ tình với Thảo và nhận được lời đồng ý 2 ngày sau đó, mối quan hệ của chúng mình bước tiến thêm 1 bước từ bạn thân thành người yêu 😍.</p>
                 </div>
                 <!-- Timeline Item 3 -->
                 <div class="mb-12 relative timeline-item">
-                    <h3 class="text-2xl font-dancing text-sky-600">Lời cầu hôn - 14/02/2025</h3>
-                    <p class="mt-2 text-slate-600">Dưới bầu trời đầy sao, anh đã quỳ gối và hỏi câu hỏi quan trọng nhất. Trong niềm hạnh phúc vỡ oà, em đã nói "Em đồng ý!".</p>
+                    <h3 class="text-2xl font-dancing text-sky-600">Lời cầu hôn - 20/01/2025</h3>
+                    <p class="mt-2 text-slate-600">Sau 7 năm gắn bó bên nhau vượt nhiều khó khăn, chúng mình thấy đã đến lúc 2 đứa đủ trưởng thành và tự tin hơn để tiến tới hôn nhân. Gia đình hai bên cũng vui vẻ cho phép chúng mình đến với nhau.</p>
                 </div>
                  <!-- Timeline Item 4 -->
                 <div class="relative timeline-item">
-                    <h3 class="text-2xl font-dancing text-sky-600">Về chung một nhà - 28/12/2025</h3>
-                    <p class="mt-2 text-slate-600">Hành trình tình yêu của chúng tôi sắp bước sang một trang mới. Chúng tôi háo hức được cùng nhau xây dựng một tổ ấm, viết tiếp câu chuyện của riêng mình.</p>
+                    <h3 class="text-2xl font-dancing text-sky-600">Về chung một nhà - 27/11/2025</h3>
+                    <p class="mt-2 text-slate-600">Hành trình tình yêu của chúng mình sắp bước sang một trang mới, mối quan hệ của chúng mình lại bước thêm 1 bước mới từ người yêu thành 'người nhà'. Chúng mình rất háo hức được cùng nhau xây dựng một tổ ấm, cùng nhau hoàn thiện những khuyết điểm của nhau và cùng nhau viết tiếp câu chuyện của riêng mình.</p>
                 </div>
             </div>
         </section>
@@ -210,8 +208,8 @@
                 <!-- Wedding Ceremony -->
                 <div class="bg-white p-8 rounded-lg card-shadow w-full text-center border-t-4 border-sky-300">
                     <i class="fas fa-church text-4xl text-sky-400 mb-4"></i>
-                    <h3 class="text-3xl font-dancing mb-2 text-slate-800">Lễ Thành Hôn</h3>
-                    <p class="font-semibold text-lg text-slate-700">9:00 - 27/11/2025</p>
+                    <h3 class="text-3xl font-dancing mb-2 text-slate-800">Tiệc nhà gái</h3>
+                    <p class="font-semibold text-lg text-slate-700">11:00 - 25/11/2025</p>
                     <p class="mt-2 text-slate-500">Tại tư gia nhà gái</p>
                     <p class="mt-1 text-slate-600">làng Le 2, Ia Lang, Đức Cơ, Gia Lai</p>
                     <a href="https://maps.app.goo.gl/542cvKMgEotfFwkQ6" target="_blank" class="inline-block mt-4 bg-sky-400 text-white py-2 px-5 rounded-full hover:bg-sky-500 transition-colors">Xem bản đồ</a>
@@ -219,22 +217,12 @@
                 <!-- Reception Party -->
                  <div class="bg-white p-8 rounded-lg card-shadow w-full text-center border-t-4 border-sky-300">
                     <i class="fas fa-glass-cheers text-4xl text-sky-400 mb-4"></i>
-                    <h3 class="text-3xl font-dancing mb-2 text-slate-800">Tiệc Mừng</h3>
+                    <h3 class="text-3xl font-dancing mb-2 text-slate-800">Tiệc nhà trai</h3>
                     <p class="font-semibold text-lg text-slate-700">11:00 - 27/11/2025</p>
                     <p class="mt-2 text-slate-500">Tư gia nhà trai</p>
                     <p class="mt-1 text-slate-600">làng Le 2, Ia Lang, Đức Cơ, Gia Lai</p>
                      <a href="https://maps.app.goo.gl/mJaiVLNj9zHM8VST8" target="_blank" class="inline-block mt-4 bg-sky-400 text-white py-2 px-5 rounded-full hover:bg-sky-500 transition-colors">Xem bản đồ</a>
                 </div>
-                <!-- Additional party -->
-                 <div class="bg-white p-8 rounded-lg card-shadow w-full text-center border-t-4 border-sky-300">
-                    <i class="fas fa-glass-cheers text-4xl text-sky-400 mb-4"></i>
-                    <h3 class="text-3xl font-dancing mb-2 text-slate-800">Additional party</h3>
-                    <p class="font-semibold text-lg text-slate-700">18:00 - 28/12/2025</p>
-                    <p class="mt-2 text-slate-500">Nhà hàng tiệc cưới XYZ</p>
-                    <p class="mt-1 text-slate-600">456 Đường DEF, Phường U, Quận V, TP.HCM</p>
-                     <a href="https://maps.google.com" target="_blank" class="inline-block mt-4 bg-sky-400 text-white py-2 px-5 rounded-full hover:bg-sky-500 transition-colors">Xem bản đồ</a>
-                </div>
-
             </div>
         </section>
         
@@ -243,43 +231,43 @@
             <h2 class="text-5xl text-sky-800 text-center mb-12">Album Kỷ Niệm</h2>
             <div class="grid grid-cols-2 sm:grid-cols-4 sm:grid-rows-4 gap-4">
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:col-span-2 sm:row-span-2">
-                    <img src="./img/anh_1.jpg" alt="Ảnh cưới 1" class="w-full h-full object-cover">
+                    <img src="./assets/anh_1.jpg" alt="Ảnh cưới 1" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="./img/anh_2.jpg" alt="Ảnh cưới 2" class="w-full h-full object-cover">
+                    <img src="./assets/anh_2.jpg" alt="Ảnh cưới 2" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                  <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="./img/anh_3.jpg" alt="Ảnh cưới 3" class="w-full h-full object-cover">
+                    <img src="./assets/anh_3.jpg" alt="Ảnh cưới 3" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                  <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:col-span-2">
-                    <img src="./img/anh_4.jpg" alt="Ảnh cưới 4" class="w-full h-full object-cover">
+                    <img src="./assets/anh_4.jpg" alt="Ảnh cưới 4" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:row-span-2">
-                    <img src="./img/anh_5.jpg" alt="Ảnh cưới 5" class="w-full h-full object-cover">
+                    <img src="./assets/anh_5.jpg" alt="Ảnh cưới 5" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                  <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="./img/anh_6.gif" alt="Ảnh cưới 6" class="w-full h-full object-cover">
+                    <img src="./assets/anh_6.gif" alt="Ảnh cưới 6" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="./img/anh_7.jpg" alt="Ảnh cưới 7" class="w-full h-full object-cover">
+                    <img src="./assets/anh_7.jpg" alt="Ảnh cưới 7" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="./img/anh_8.jpg" alt="Ảnh cưới 8" class="w-full h-full object-cover">
+                    <img src="./assets/anh_8.jpg" alt="Ảnh cưới 8" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg sm:col-span-2">
-                    <img src="./img/anh_9.jpg" alt="Ảnh cưới 9" class="w-full h-full object-cover">
+                    <img src="./assets/anh_9.jpg" alt="Ảnh cưới 9" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
                 <div class="relative group cursor-pointer gallery-img overflow-hidden rounded-lg">
-                    <img src="./img/anh_10.jpg" alt="Ảnh cưới 8" class="w-full h-full object-cover">
+                    <img src="./assets/anh_10.jpg" alt="Ảnh cưới 8" class="w-full h-full object-cover">
                     <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-search-plus text-white text-3xl"></i></div>
                 </div>
             </div>
@@ -327,7 +315,7 @@
 
                 <div class="bg-white p-6 rounded-lg card-shadow text-center">
                     <h3 class="text-2xl font-semibold mb-4 text-slate-800">Nhà trai</h3>
-                    <img src="./img/qr_1.png" alt="Mã QR mừng cưới nhà trai" class="w-48 h-48 mx-auto rounded-md object-cover mb-4">
+                    <img src="./assets/qr_1.png" alt="Mã QR mừng cưới nhà trai" class="w-48 h-48 mx-auto rounded-md object-cover mb-4">
                     <div class="text-left inline-block">
                         <p><span class="font-semibold">Ngân hàng:</span> ACB</p>
                         <p><span class="font-semibold">Chủ TK:</span> Phạm Tiến Sỹ</p>
@@ -337,11 +325,11 @@
 
                 <div class="bg-white p-6 rounded-lg card-shadow text-center">
                     <h3 class="text-2xl font-semibold mb-4 text-slate-800">Nhà gái</h3>
-                    <img src="./img/qr_1.png" alt="Mã QR mừng cưới nhà gái" class="w-48 h-48 mx-auto rounded-md object-cover mb-4">
+                    <img src="./assets/qr_2.png" alt="Mã QR mừng cưới nhà gái" class="w-48 h-48 mx-auto rounded-md object-cover mb-4">
                     <div class="text-left inline-block">
                         <p><span class="font-semibold">Ngân hàng:</span> MB Bank</p>
                         <p><span class="font-semibold">Chủ TK:</span> Nguyễn Thị Thảo</p>
-                        <p><span class="font-semibold">Số TK:</span> 0389369104</p>
+                        <p><span class="font-semibold">Số TK:</span> 5500102082000</p>
                     </div>
                 </div>
 
@@ -382,7 +370,7 @@
                         <div>23</div> <div>24</div> <div>25</div> <div>26</div>
                         <div class="relative flex items-center justify-center">
                             <!-- Hand-drawn heart SVG - CENTERED -->
-                            <svg class="absolute w-12 h-12 text-sky-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="absolute w-12 h-12 text-sky-500 top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M19.5 12.572c-1.895 2.138-4.536 4.428-7.5 6.428-2.964-2-5.605-4.29-7.5-6.428C2.736 10.66 2 8.71 2 6.5c0-2.485 2.015-4.5 4.5-4.5 2.117 0 4.031 1.488 4.885 3.524a.5.5 0 00.93 0C13.22 3.488 15.133 2 17.25 2c2.485 0 4.5 2.015 4.5 4.5 0 2.21-.736 4.16-2.25 6.072z"/>
                             </svg>27</span>
                         </div>
@@ -396,8 +384,8 @@
     <!-- Footer -->
     <footer class="text-center py-10 bg-slate-800 mt-20">
         <h2 class="text-4xl text-white font-dancing">Cảm ơn!</h2>
-        <p class="text-slate-300 mt-2">Cảm ơn bạn đã đến chung vui cùng chúng tôi!</p>
-        <p class="text-white font-bold text-2xl mt-4 font-dancing">Anh & Em</p>
+        <p class="text-slate-300 mt-2">Cảm ơn bạn đã đến chung vui cùng chúng mình!</p>
+        <p class="text-white font-bold text-2xl mt-4 font-dancing">Sỹ & Thảo</p>
     </footer>
     
     <!-- Image Modal -->
@@ -452,7 +440,7 @@
                 loadingIndicator.style.display = 'none'; // Hide loading indicator
                 wishesDisplay.innerHTML = ''; // Clear the display first
                 if (snapshot.empty) {
-                     wishesDisplay.innerHTML = '<p class="col-span-full text-center text-slate-500">Chưa có lời chúc nào. Hãy là người đầu tiên!</p>';
+                     wishesDisplay.innerHTML = '<p class="col-span-full text-center text-slate-500">Chưa có lời chúc nào. Hãy là người đầu tiên gửi cho chúng mình những lời chúc nhé!</p>';
                 } else {
                     snapshot.forEach((doc) => {
                         const wish = doc.data();
@@ -551,6 +539,7 @@
             const musicControl = document.getElementById('music-control');
             const musicIcon = document.getElementById('music-icon');
             const backgroundMusic = document.getElementById('background-music');
+            backgroundMusic.volume = 0.4;
             let isPlaying = false;
             musicControl.addEventListener('click', () => {
                 if (isPlaying) {
